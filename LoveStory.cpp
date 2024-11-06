@@ -1,4 +1,4 @@
-#include<iostream?
+#include<iostream>
 using namespace std;
 
 int main(){
@@ -9,7 +9,7 @@ int main(){
         cin >> s;
         int count = 0;
         for(int j = 0; j < code.length(); j++){
-            if(s[j] == code[j]){
+            if(s[j] != code[j]){
                 count++;
             }
         }
