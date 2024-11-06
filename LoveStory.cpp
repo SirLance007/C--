@@ -3,6 +3,7 @@ using namespace std;
 
 int main(){
     int t;
+    cin >> t;
     string code = "codeforces";
     string s;
     for(int i = 0; i <t;i++){
