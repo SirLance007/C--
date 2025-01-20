@@ -11,7 +11,7 @@ void solve(){
     if( a == b && c%2 == 0){
         cout << "Second" << endl;
     }
-    else if( a == b && c%2 != 0){
+    else if( a == b && c%2 != 0 ){
         cout << "First" << endl;
     }
     else if( a < b + c){
