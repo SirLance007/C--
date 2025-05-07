@@ -4,7 +4,7 @@ using namespace std;
 void solve(){
     int n;
     cin >> n;
-    int total = 0;
+    int total = 1;
     int count = 0;
     if( n == 1 ){
         cout << 1 << endl;
@@ -12,28 +12,22 @@ void solve(){
         return;
     }
     if(n%2 != 0){
-        for(int i = 0; i <= 3*n ; i+=6){
-            total ++;
+        cout << n/2 + n%2 << endl;
+        int j = 4;
+        for(int i = 1; i <= 3*n-3 ; i+=5){
+            cout << i << " ";
+            cout << j << " " << endl;
+            j+= 5;
         }
-        cout << total+2 << endl;
-        int j = 5;
-        for(int i  = 1; i <= 3*n ; i+=6){
-        cout << i << " ";
-        cout << j << " ";
-        j+= 6;
-        }
-        cout << j+1 << " " << j+3 << endl;
+        cout << (3*n)-2 << " " << 3*n << endl;
     }
     else{
-        for(int i = 0; i <= 3*n ; i+=6){
-            total ++;
-        }
-        cout << total << endl;
-        int j = 5;
-        for(int i  = 1; i <= 3*n ; i+=6){
+        cout << n/2 + n%2 << endl;
+        int j = 4;
+        for(int i  = 1; i <= 3*n ; i+=5){
             cout << i << " ";
-            cout << j << " ";
-            j+= 6;
+            cout << j << " " << endl;
+            j+= 5;
         }
     }
 }
