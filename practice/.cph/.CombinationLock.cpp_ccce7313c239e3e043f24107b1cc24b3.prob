@@ -1,0 +1,1 @@
+{"name":"Local: CombinationLock","url":"d:\\CodeForces c++\\C++\\practice\\CombinationLock.cpp","tests":[{"id":1749902822746,"input":"3\n4\n5\n3\n","output":"-1\n4 1 3 5 2\n1 3 2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CodeForces c++\\C++\\practice\\CombinationLock.cpp","group":"local","local":true}
