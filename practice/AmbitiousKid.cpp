@@ -1,19 +1,31 @@
 #include<bits/stdc++.h>
-using namespce std;
+using namespace std;
 
 void solve(){
     int n;
     cin >> n;
-    int mini = 0;
-    for(int i = 0; i < n ; i++){
-        int num;
-        cin >> num;
-        int diff = abs(abs(num) - 0);
-        mini = min(mini , diff)l
+    string s;
+    cin >> s;
+    unordered_map<char , int> mp;
+    for(int i = 0; i < n; i++){
+        mp[s[i]]++;
     }
-    cout << mini << endl;
+    for(int i = 1 ; i < n-1  ; i++){
+        if(mp[s[i]] > 1){
+            cout << "Yes" << endl;
+            return;
+        }
+    }
+    cout << "No" << endl;
 }
 
 int main(){
-    solve();
+    
+    int t;
+    cin >> t;
+    while(t--){
+        solve();
+    }
+    
+    return 0;
 }

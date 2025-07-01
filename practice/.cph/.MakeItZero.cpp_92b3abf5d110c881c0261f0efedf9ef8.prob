@@ -1,0 +1,1 @@
+{"name":"Local: MakeItZero","url":"d:\\CodeForces c++\\C++\\practice\\MakeItZero.cpp","tests":[{"id":1750842550657,"input":"4\n4\n2 4 3 6\n3\n1 2 3\n2\n4 2\n5\n1 2 3 1 4\n","output":"4 5 6 7\n3 2 3\n4 2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CodeForces c++\\C++\\practice\\MakeItZero.cpp","group":"local","local":true}
