@@ -1,0 +1,1 @@
+{"name":"Local: BlackboardGame","url":"d:\\CodeForces c++\\C++\\practice\\BlackboardGame.cpp","tests":[{"id":1751434816178,"input":"5\n2\n4\n5\n7\n100\n","output":"Alice\nBob\nAlice\nAlice\nBob\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CodeForces c++\\C++\\practice\\BlackboardGame.cpp","group":"local","local":true}
