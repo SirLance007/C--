@@ -1,0 +1,1 @@
+{"name":"Local: DiffrentDivisors","url":"d:\\CodeForces c++\\C++\\practice\\DiffrentDivisors.cpp","tests":[{"id":1751776443092,"input":"6\n1\n2\n3\n381\n165\n79\n","output":"6\n15\n55\n294527\n56279\n13529\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CodeForces c++\\C++\\practice\\DiffrentDivisors.cpp","group":"local","local":true}
