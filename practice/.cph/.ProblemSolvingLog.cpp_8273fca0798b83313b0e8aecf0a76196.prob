@@ -1,0 +1,1 @@
+{"name":"Local: ProblemSolvingLog","url":"d:\\CodeForces c++\\C++\\practice\\ProblemSolvingLog.cpp","tests":[{"id":1752558804234,"input":"3\n2\n5 3\n1\n1\n4\n7 7 5 5\n","output":"2\n-1\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CodeForces c++\\C++\\practice\\ProblemSolvingLog.cpp","group":"local","local":true}
