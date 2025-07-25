@@ -1,27 +1,30 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <string>
+#include <algorithm>
+#include <cmath>
+#include <set>
+#include <map>
+#include <iomanip>
 using namespace std;
 
 void solve() {
     int n;
     cin >> n;
-    vector<int> arr;
-    for(int i = 0; i < n ; i++){
-        int a;
-        cin >> a;
-        arr.push_back(a);
+    string st;
+    cin >> st;
+    unordered_map<int , int> freq;
+    int count = 0;
+    for(int i = 0; i < st.size() ; i++){
+        freq[st[i]]++;
     }
-    if (n == 1) {
-        cout << -1 << endl;
-        return;
-    }
-    for (int i = 1; i < n; i++) {
-        if (arr[i] != arr[i - 1]) {
-            cout << 2 << endl;
-            return;
+    for(auto pair : freq){
+        if(pair.second >= pair.first - 'A'+1){
+            count++;
         }
     }
-    
-    cout << -1 << endl;
+    cout << count << endl;
 }
 
 int main() {
