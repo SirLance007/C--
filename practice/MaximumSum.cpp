@@ -16,12 +16,8 @@ void solve() {
     }
 
     sort(ans.begin(), ans.end());
-    int index = 0;              // ✅ Fix: was 'index1' before, but you used 'index' later
+    int index = 0;              
     int last = n - 1;
-
-    // 6 2
-    // 15 22 12 10 13 11
-    // k = 1 > 10 11 12 13 15 22  => 10+11 = 21 >= 22 => 10+11+12+13 => 46
 
     while (k != 0) {
         ll sum = ans[index] + ans[index + 1];
