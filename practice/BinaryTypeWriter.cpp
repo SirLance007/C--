@@ -1,65 +1,53 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void solve(){
+void solve()
+{
     int n;
     cin >> n;
     string st;
     cin >> st;
-    int one = 0;
-    int zero = 0;
-    int one_zero = 0;
-    int zero_one = 0;
-    int operations = 0;
-    for(int i = 0; i < n ; i++){
-        if(st[i] == '1'){
-            one++;
-        }
-        if(st[i] == '0'){
-            zero++;
-        }
+    int count_01 = 0;
+    int count_10 = 0;
+    int prev = '0';
+    int count = 0;
+    if (st[0] != '0')
+    {
+        count++;
+        prev = '1';
     }
-    if(st[0] != '0'){
-        operations++;
-    }
-    for(int i = 1; i < n ; i++){
-        if(st[i] == '1' && st[i-1] == '0'){
-            zero_one++;
-            operations++;
-        }
-        if(st[i] == '0' && st[i-1] == '1'){
-            one_zero++;
-            operations++;
+    for (int i = 1; i < n; i++)
+    {
+        if (st[i - 1] == '0' && st[i] == '1')
+            count_01++;
+        if (st[i - 1] == '1' && st[i] == '0')
+            count_10++;
+        if (st[i] != prev)
+        {
+            count++;
+            prev = st[i];
         }
     }
-    operations += n;
-    if(one == 1 && zero == 1){
-            cout << operations+n << endl;
+    if (count_01 >= 2 || count_10 >= 2)
+    {
+        cout << n + count - 2 << endl;
     }
-    if( zero == 1 && one > 1){
-            cout << n+1 << endl;
-            return;
+    else if (count_01 >= 1 || count_10 >= 1 || st[0] == '1')
+    {
+        cout << n + 1 << endl;
     }
-    if( one == 1  && zero > 1){
-            cout << n+1 << endl;
-            return;
-    }
-    if(one != 0 && zero == 0){
-            cout << n+1 << endl;
-    }
-    else if(one == 0 && zero != 0){
-            cout << n << endl;
-    }
-    
-    else{
-            cout << operations-1 << endl;
+    else
+    {
+        cout << n << endl;
     }
 }
 
-int main(){
+int main()
+{
     int t;
     cin >> t;
-    while(t-- > 0){
+    while (t-- > 0)
+    {
         solve();
     }
 }
