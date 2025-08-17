@@ -1,15 +1,18 @@
 #include <iostream>
 #include <vector>
-#include <utility>
-#include <algorithm>
 using namespace std;
 
 void solve()
 {
-    long long n, k;
-    cin >> n >> k;
-    for (int i = 0; i < n; i++)
+    int n, m, p, q;
+    cin >> n >> m >> p >> q;
+    if ((n + 1) / p == m / q)
     {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
     }
 }
 

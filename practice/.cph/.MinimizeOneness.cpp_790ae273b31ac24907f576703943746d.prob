@@ -1,0 +1,1 @@
+{"name":"Local: MinimizeOneness","url":"/Users/prankursharma/Developer/Codeforces Code/C--/practice/MinimizeOneness.cpp","tests":[{"id":1754478891213,"input":"3\n1\n2\n3\n","output":"0\n01\n010\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/prankursharma/Developer/Codeforces Code/C--/practice/MinimizeOneness.cpp","group":"local","local":true}

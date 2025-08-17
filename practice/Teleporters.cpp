@@ -1,46 +1,42 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cmath>
 using namespace std;
 
 void solve()
 {
     long long n, c;
     cin >> n >> c;
-    vector<long long> cost;
+    vector<long long> ans;
     for (int i = 0; i < n; i++)
     {
         long long x;
         cin >> x;
-        cost.push_back(x + (i + 1));
+        long long total = x + (i + 1);
+        ans.push_back(total);
     }
-
-    sort(cost.begin(), cost.end());
-
-    long long total = 0;
+    sort(ans.begin(), ans.end());
     int count = 0;
-
     for (int i = 0; i < n; i++)
     {
-        if (total + cost[i] <= c)
+        c -= ans[i];
+        if (c < 0)
         {
-            total += cost[i];
-            count++;
+            cout << count << endl;
+            return;
         }
-        else
-        {
-            break;
-        }
+        count++;
     }
-
-    cout << count << endl;
+    cout << n << endl;
+    return;
 }
 
 int main()
 {
     int t;
     cin >> t;
-    while (t--)
+    while (t-- > 0)
     {
         solve();
     }

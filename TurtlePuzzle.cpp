@@ -1,16 +1,22 @@
 #include <iostream>
-#include <vector>
-#include <utility>
+#include <cmath>
 #include <algorithm>
 using namespace std;
 
 void solve()
 {
-    long long n, k;
-    cin >> n >> k;
+    int n;
+    cin >> n;
+    vector<int> ans;
+    int sum = 0;
     for (int i = 0; i < n; i++)
     {
+        int x;
+        cin >> x;
+        ans.push_back(x);
+        sum += abs(x);
     }
+    cout << sum << endl;
 }
 
 int main()
