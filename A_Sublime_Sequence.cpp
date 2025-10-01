@@ -1,0 +1,37 @@
+// Code by Prankur Sharma
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <unordered_set>
+#include <queue>
+#include <stack>
+#include <deque>
+using namespace std;
+
+#define int long long
+#define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+void solve(){
+    int x , n;
+    cin >> x >> n;
+    if(n % 2 == 0){
+        cout << 0 << endl;
+    }
+    else{
+        cout << x << endl;
+    }
+}
+
+int32_t main(){
+    fast;
+    int t = 1;
+    cin >> t;
+    while(t--){
+        solve();
+    }
+    return 0;
+}
