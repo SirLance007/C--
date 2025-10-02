@@ -30,30 +30,26 @@ void solve(){
     int n , m;
     cin >> n >> m;
     vector<vector<int>> ans( n , vector<int> (m , 0));
-    int total = 0;
+    
+    int total = 0;           // sum of absolute values
+    int cnt = 0;             // count of negative numbers
+    int mini = LLONG_MAX;    // smallest absolute value
+    
     for(int i = 0; i < n ; i++){
-        int sum = 0;
-        int cnt = 0;
-        int mini = INT_MAX;
         for(int j = 0; j < m ; j++){
             cin >> ans[i][j];
-            if(ans[i][j] <= 0){
-                cnt++;
-            }
-            sum += abs(ans[i][j]); 
+            if(ans[i][j] < 0) cnt++;
+            total += abs(ans[i][j]);
             mini = min(mini , abs(ans[i][j]));
         }
-        // cout << "Cnt : " <<  cnt << endl;
-        // cout << "Sum : " <<  sum << endl;
-        // cout << "Mini : " << mini << endl;
-        if(cnt % 2 == 0){
-            total += sum;
-        }
-        else{
-            total += sum - 2*mini;
-        }
     }
-    cout << total << endl;
+
+    if(cnt % 2 == 0){
+        cout << total << endl;
+    }
+    else{
+        cout << total - 2*mini << endl;
+    }
 }
 
 int32_t main(){
