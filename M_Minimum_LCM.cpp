@@ -16,12 +16,26 @@ using namespace std;
 #define int long long
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
+// Problem 
+// need to find a , b such that a + b -> n
+// lcm ( a , b) -> minimum
+
 // Observations
-// Ek array mai jitne bhi elements hai vo uski len ke barabar hone chaiye
+// we can take any a , b from 1 to n-1
+// so 
 
 
 void solve(){
-    
+    int n;
+    cin >> n;
+    int a = 1;
+    for (int g = 2; g * g <= n; ++g) {
+      if (n % g == 0) {
+        a = n / g;
+        break;
+      }
+    }
+    cout << a << ' ' << n - a << endl;
 }
 
 int32_t main(){

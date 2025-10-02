@@ -16,9 +16,15 @@ using namespace std;
 #define int long long
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-// Observations
-// Ek array mai jitne bhi elements hai vo uski len ke barabar hone chaiye
+// Observation
+// Target to make every element of the array equal to 0
+// for every index decrease it by the index it is at
+// for every index dec by n-i+1
+// possible hai explode karna
 
+
+// Operations sare elements pe ek sath lagege so we need to check properly 
+// 
 
 void solve(){
     

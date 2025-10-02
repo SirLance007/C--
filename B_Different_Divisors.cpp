@@ -12,13 +12,12 @@
 #include <deque>
 #include <cmath>
 using namespace std;
+#include <climits>
 
 #define int long long
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-// Observations
-// Ek array mai jitne bhi elements hai vo uski len ke barabar hone chaiye
-
+// 
 
 void solve(){
     

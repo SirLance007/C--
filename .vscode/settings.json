@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.js": "javascriptreact",
         "__bit_reference": "cpp",
         "__hash_table": "cpp",
         "__locale": "cpp",
@@ -94,6 +95,7 @@
         "utility": "cpp",
         "ostream": "cpp",
         "ranges": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "climits": "cpp"
     }
 }
