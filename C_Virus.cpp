@@ -21,29 +21,40 @@ using namespace std;
 // so total points 
 
 void solve(){
-    int n , m;
-    cin >> n >> m;
-    vector<int> positions;
-    unordered_map<int , int> mp;
-    for(int i = 0; i < n ; i++){
-        int x;
-        cin >> x;
-        positions.push_back(x);
+    int houses , infected;
+    cin >> houses >> infected;
+
+    vector<int> positions(infected);
+    for(int i = 0; i < infected ; i++){
+        cin >> positions[i];
     }
-    // har portion ke end points par apne ko system baithana hai
-    // jab ek end point ko rokege toh ek infected jada ho jaygea
-    // 0 1 0 1 1 0 1
-    vector<int> ans(n , 0);
-    for(int i = 0; i < n ; i++){
-        if(mp.find(i+1) != mp.end()){
-            ans[i] = 1;
+    sort(positions.begin(), positions.end());
+
+    vector<int> diff(infected);
+    for(int i = 1; i < infected ; i++){
+        diff[i] = positions[i] - positions[i-1] - 1; // actual gap
+    }
+    // circular gap
+    diff[0] = houses - positions[infected-1] - 1 + positions[0];
+
+    sort(diff.begin(), diff.end());
+
+    int cnt = 0;           // how much infection has spread
+    int notInfected = 0;   // houses that remain safe
+
+    for(int i = infected-1; i >= 0; i--){
+        diff[i] -= cnt*2; // infection spreads 2 per step
+        if(diff[i] <= 0) break;
+
+        if(diff[i] == 1){
+            notInfected += 1;
+        } else {
+            notInfected += (diff[i] - 1);
         }
+        cnt += 2;
     }
-    int flag = 0;
-    for(int i = 0; i < n ; i++){
-        if(ans[i] == 1){
-        }
-    }
+
+    cout << houses - notInfected << "\n";
 }
 
 int32_t main(){

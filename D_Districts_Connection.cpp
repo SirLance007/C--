@@ -21,40 +21,37 @@ using namespace std;
 
 
 void solve(){
-    int n , m;
-    cin >> n >> m;
-    vector<vector<int>> ans ( n , vector<int> (m , 0));
+    int n;
+    cin >> n;
+    vector<int> ans;
+    unordered_set<int> st;
     for(int i = 0; i < n ; i++){
-        for(int j = 0; j < m ; j++){
-            int x;
-            cin >> x;
-            ans[i][j] = x;
-        }
+        int x;
+        cin >> x;
+        ans.push_back(x);
+        st.insert(x);
     }
-    vector<int> sequence;
-    for(int i = 0; i < m ; i++){
-        int maxi = 0;
-        int row = 0;
-        for(int j = 0; j < n ; j++){
-            if(ans[j][i] > maxi){
-                row = i;
-                maxi = ans[j][i];
+    if(st.size() == 1){
+        cout << "NO" << endl;
+        return;
+    }
+    int first = ans[0];
+    int second = ans[0];
+    int flag = 0;
+    cout << "YES" << endl;
+    for(int i = 1; i < n ; i++){
+        if(ans[i] != first){
+            cout << 1 << " " << i+1 << endl;
+            if(flag == 0){
+                second = i+1;
+                flag = 1;
             }
         }
-        sequence.push_back(row);
     }
-    int idx = 0;
-    int total = 0;
-    int multi = n*m;
-    for(int i = sequence[idx] ; i < n ; i++){
-        for(int j = 0; j < m ; j++){
-            total += multi*ans[i][j];
-            multi--;
-        }
-        idx++;
-        if(idx == n){
-            cout << total << endl;
-            return;
+    
+    for(int i = 1; i < n ; i++){
+        if(first == ans[i]){
+            cout << second << " " << i+1 << endl;
         }
     }
 }

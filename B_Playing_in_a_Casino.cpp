@@ -27,13 +27,26 @@ using namespace std;
 void solve(){
     int n , m;
     cin >> n >> m;
-    vector<vector<int>> ans;
+    vector<vector<int>> ans(n , vector<int> (m , 0));
     for(int i = 0; i < n ; i++){
         for(int j = 0; j < m ; j++){
             cin >> ans[i][j];
         }
     }
-    
+    int total = 0;
+    for(int i = 0 ; i < m ; i++){
+        vector<int> result;
+        for(int j = 0; j < n ; j ++){
+            result.push_back(ans[j][i]);
+        }
+        sort(result.begin() , result.end());
+        int sum = 0;
+        for(int j = 0; j < n ; j++){
+            sum += result[j];
+            total += result[j]*(j+1)-sum;
+        }
+    }
+    cout << total << endl;
 }
 
 int32_t main(){
