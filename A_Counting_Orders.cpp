@@ -17,14 +17,19 @@ using namespace std;
 #define int long long
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-// Observations
-// array of len -> n
-// array x of len -> q
-// 6 2
-// 15 22 12 10 13 11
-// 10 11 12 13 15 22
-// 
+// Observation
+// 9 6 8 4 5 2
+// 4 1 5 6 3 1
+// Ways to reorder that 
+// now we need to know ki apan har eleemnt ko kitni jagah rakh sakte hai then just multiply them
+// 9 -> 6
+// 8 -> 6
+// 6 -> 5
+// 5 -> 4
+// 4 -> 3
+// 2 -> 2
 
+// 
 void solve(){
     
 }
