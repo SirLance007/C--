@@ -17,20 +17,12 @@ using namespace std;
 #define int long long
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
+// Observation
+// We need to find how many 1 are there plus 0 are there 
+// 
+
 void solve(){
-    int a , b , n;
-    cin >> a >> b >> n;
-    vector<int> ans; 
-    for(int i = 0; i < n ; i++){
-        int x;
-        cin >> x;
-        ans.push_back(x);
-    }
-    int total = 0;
-    for(int i = 0; i < n ; i++){
-        total += min(ans[i] , a-1);
-    }
-    cout << total+b << endl;
+    
 }
 
 int32_t main(){
