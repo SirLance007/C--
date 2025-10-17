@@ -17,35 +17,25 @@ using namespace std;
 #define int long long
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-// Observation
-// We need to find how many 1 are there plus 0 are there 
-// 3 conditions 
-// agar only zeros hai answer is 0
-// agar only ones hai toh answer is no of ones
-// agar dono hai then answer is count of 1 + count of 0 +1
+// Observations
+// We need to check for every index ki har index par use pehel wale sare ke sare cars hone chaiye use jada honge toh chalgea but should not be less
 
 void solve(){
     int n;
     cin >> n;
-    vector<int> ans;
-    int one = 0;
-    int zero = 0;
-    int other = 0;
-    for(int i = 0 ; i < n ; i++){
+    vector<int> a;
+    vector<int> b;
+    for(int i = 0; i < n ; i++){
         int x;
         cin >> x;
-        if(x == 1){
-            one++;
-        }
-        if(x == 0){
-            zero++;
-        }
-        if( x != 1 && x != 0 ){
-            other++;
-        }
-        ans.push_back(x);
+        a.push_back(x);
     }
-    cout << (1ll << zero) * one << endl;
+    for(int j = 0; j < n ; j++){
+        int  y;
+        cin >> y;
+        b.push_back(y);
+    }
+
 }
 
 int32_t main(){

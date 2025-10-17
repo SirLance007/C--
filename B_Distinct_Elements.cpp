@@ -17,42 +17,42 @@ using namespace std;
 #define int long long
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-// Observation
-// We need to find how many 1 are there plus 0 are there 
-// 3 conditions 
-// agar only zeros hai answer is 0
-// agar only ones hai toh answer is no of ones
-// agar dono hai then answer is count of 1 + count of 0 +1
-
 void solve(){
     int n;
     cin >> n;
     vector<int> ans;
-    int one = 0;
-    int zero = 0;
-    int other = 0;
-    for(int i = 0 ; i < n ; i++){
+    vector<int> a(n);
+    
+    for(int i = 0; i < n; i++){
         int x;
         cin >> x;
-        if(x == 1){
-            one++;
-        }
-        if(x == 0){
-            zero++;
-        }
-        if( x != 1 && x != 0 ){
-            other++;
-        }
         ans.push_back(x);
     }
-    cout << (1ll << zero) * one << endl;
+    
+    a[0] = 1;
+    int crr = 1;
+    
+    for(int i = 1; i < n; i++){
+        int diff = ans[i] - ans[i-1] - 1;
+        if(diff == i){
+            a[i] = ++crr;
+        }
+        else{
+            a[i] = a[i - diff - 1];
+        }
+    }
+    
+    for(int i = 0; i < n; i++){
+        cout << a[i] << " ";
+    }
+    cout << endl;
 }
 
 int32_t main(){
     fast;
     int t = 1;
     cin >> t;
-    while(t--){
+    while(t-- > 0){
         solve();
     }
     return 0;

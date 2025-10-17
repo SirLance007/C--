@@ -23,7 +23,7 @@ using namespace std;
 // Last may ya toh 5 ya toh 0 hona chaiye
 // so last se jab tak we are not getting 0 or 5 we need to remove
 // har cheze its like 
-// 25 50 75 100
+// 25 50 75 00
 // 125 150 175 200
 // so its like we dont care aage kya aa rha hai 
 // if we have in string 25 , 50 , 75 or 00 at last ok go for it

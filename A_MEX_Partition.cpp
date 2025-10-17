@@ -18,35 +18,29 @@ using namespace std;
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 // Observation
-// We need to find how many 1 are there plus 0 are there 
-// 3 conditions 
-// agar only zeros hai answer is 0
-// agar only ones hai toh answer is no of ones
-// agar dono hai then answer is count of 1 + count of 0 +1
+// MEX nikalna hai 
 
 void solve(){
     int n;
-    cin >> n;
+    cin >> n ;
     vector<int> ans;
-    int one = 0;
-    int zero = 0;
-    int other = 0;
-    for(int i = 0 ; i < n ; i++){
+    unordered_map<int , int> mp;
+    int maxi = 0;
+    for(int i = 0; i < n ; i++){
         int x;
         cin >> x;
-        if(x == 1){
-            one++;
-        }
-        if(x == 0){
-            zero++;
-        }
-        if( x != 1 && x != 0 ){
-            other++;
-        }
         ans.push_back(x);
+        mp[x]++;
+        maxi = max(maxi , x);
     }
-    cout << (1ll << zero) * one << endl;
-}
+    for(int i = 0; i <= maxi+1 ; i++){
+        if(mp.find(i) == mp.end()){
+            cout << i << endl;
+            return;
+        }
+    }
+
+}   
 
 int32_t main(){
     fast;

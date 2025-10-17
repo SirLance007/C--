@@ -10,33 +10,25 @@
 #include <queue>
 #include <stack>
 #include <deque>
+#include <cmath>
+#include <climits>
 using namespace std;
 
 #define int long long
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-// Observations
-// array given hai
-
-// Agar merko koi bhi ek element ko increase karna hai then we need to ensure that ki usse phele wale element sare us number se bade ho 
-// So the logic is last ke do elements can be same 
-// Hamesha change first two mai hi ayega 
-// aur vo hamesh firts
-// 1 1 1 1 
-// 2 
-// 3 1 1 1
-// 3 3 3 3
-// 7 3 3 3
-// 7 8 3 3
-// 7 8 7 7 
-// 
 void solve(){
     int n;
-    cin >> n ;
-    vector<int> ans;
-    for(int i = 0; i < n ; i++){
-
-    }
+        cin >> n;
+        int k = 0;
+        while((1 << (k + 1)) <= n - 1) ++k; 
+        for(int i = (1 << k) - 1; i >= 0; i--) {
+            cout << i << ' ';
+        }
+        for(int i = (1 << k); i < n; i++) {
+            cout << i << ' ';
+        }
+        cout << '\n';
 }
 
 int32_t main(){
