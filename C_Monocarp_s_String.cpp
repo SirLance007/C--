@@ -1,3 +1,4 @@
+// Hare Krishna
 // Code by Prankur Sharma
 #include <iostream>
 #include <vector>
@@ -15,108 +16,46 @@
 using namespace std;
 
 #define int long long
-#define fast                 \
-    ios::sync_with_stdio(0); \
-    cin.tie(0);              \
-    cout.tie(0);
+#define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-// Observation
-// Minimum concecutive wala subarray chaiye
-
-// Approach would be
-// First count how many we need to remove
-// if koi bhi subarray ki jo len hai vo apni jini chaiye usse jada hai just output that
-// then we need to find a subaary of two
-// if not then -1
-// now agar we are nto able to find the required one
-// to apan sabse chota jo sub array hai b ka usko remove karege
-// then we again check do we have diff + jo subarray remove kiya array
-
-void solve()
-{
+void solve(){
     int n;
     cin >> n;
     string st;
     cin >> st;
-    unordered_map<int, int> mp;
-    int a = 0;
-    int b = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (st[i] == 'a')
-        {
-            a++;
+
+    int count_a = count(st.begin(), st.end(), 'a');
+    int count_b = count(st.begin(), st.end(), 'b');
+    int diff = count_a - count_b;
+
+    vector<int> prefix(n, 0);
+    prefix[0] = (st[0] == 'a' ? 1 : -1);
+
+    unordered_map<int, int> mp; 
+    mp[0] = -1; 
+    int ans = n;
+
+    for (int i = 0; i < n; i++) {
+        if (i > 0) {
+            prefix[i] = prefix[i - 1] + (st[i] == 'a' ? 1 : -1);
         }
-        else
-        {
-            b++;
-        }
-    }
-    int diff = a - b;
-    if (diff == 0)
-    {
-        cout << 0 << endl;
-        return;
-    }
-    if (a == 0 || b == 0)
-    {
-        cout << -1 << endl;
-        return;
-    }
-    if (diff < 0)
-    {
-        int cnt_b = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (st[i] == 'b')
-            {
-                cnt_b++;
-            }
-            else
-            {
-                mp[cnt_b]++;
-                cnt_b = 0;
-            }
-        }
-        if(cnt_b > 0){
-            mp[cnt_b]++;
+
+        mp[prefix[i]] = i;
+
+        int needed = prefix[i] - diff;
+        if (mp.find(needed) != mp.end()) {
+            ans = min(ans, i - mp[needed]);
         }
     }
-    else
-    {
-        int cnt_a = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (st[i] == 'a')
-            {
-                cnt_a++;
-            }
-            else
-            {
-                mp[cnt_a]++;
-                cnt_a = 0;
-            }
-        }
-        if(cnt_a > 0){
-            mp[cnt_a]++;
-        }
-    }
-    for(auto pair : mp){
-        if(pair.first >= abs(diff)){
-            cout << abs(diff) << endl;
-            return;
-        }
-    }
-    cout << -1 << endl;
+
+    cout << (ans == n ? -1 : ans) << endl;
 }
 
-int32_t main()
-{
+int32_t main(){
     fast;
     int t = 1;
     cin >> t;
-    while (t--)
-    {
+    while(t--){
         solve();
     }
     return 0;

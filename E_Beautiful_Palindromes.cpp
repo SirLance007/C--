@@ -1,3 +1,4 @@
+// Hare Krishna
 // Code by Prankur Sharma
 #include <iostream>
 #include <vector>
@@ -15,32 +16,30 @@
 using namespace std;
 
 #define int long long
-#define fast                 \
-    ios::sync_with_stdio(0); \
-    cin.tie(0);              \
-    cout.tie(0);
+#define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void solve()
-{
+void solve(){
     int n;
     cin >> n;
-    int a[n];
-    for (int i = 1; i <= n; i++)
-        cin >> a[i];
-    int res = a[1];
-    for (int i = 2; i <= n; i++)
-        res &= a[i];
-    cout << res << endl;
-    
+    unordered_set<int> st;
+    for(int i = 0; i < n; i++){
+        int x;
+        cin >> x;
+        st.insert(x);
+    }
+    for(int i = 0; i <= n+1 ; i++){
+        if(st.find(i) == st.end()){
+            cout << i << endl;
+            return;
+        }
+    }
 }
 
-int32_t main()
-{
+int32_t main(){
     fast;
     int t = 1;
     cin >> t;
-    while (t--)
-    {
+    while(t--){
         solve();
     }
     return 0;
