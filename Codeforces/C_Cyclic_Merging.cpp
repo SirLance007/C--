@@ -8,6 +8,8 @@ class CartesianTree {
     vector<long long> vals;
     vector<int> left_child, right_child, parent;
     int m;
+
+    // int total = 0;
     
 public:
     CartesianTree(const vector<long long>& v) : vals(v), m(v.size()) {
@@ -16,7 +18,7 @@ public:
         left_child.assign(m, -1);
         right_child.assign(m, -1);
         parent.assign(m, -1);
-        
+        // build the tree first 
         buildTree();
     }
     
