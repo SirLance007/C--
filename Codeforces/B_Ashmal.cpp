@@ -32,13 +32,18 @@ void solve(){
         string prepend = ans[i] + op;
         string append = op + ans[i];
         
+        // if we add the string at first 
         if(prepend < append){
             op = prepend;
         }
+        // if we add the string at last
+        // top se left mai add karo then left se right mai add karo 
         else{
             op = append;
         }
     }
+    // first print op 
+    // then print then final one 
     cout << op << endl;
 }
 
