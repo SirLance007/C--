@@ -2,17 +2,6 @@
 // Code by Prankur Sharma
 #include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
-#include <map>
-#include <unordered_map>
-#include <set>
-#include <unordered_set>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <cmath>
-#include <climits>
 using namespace std;
 
 #define int long long
